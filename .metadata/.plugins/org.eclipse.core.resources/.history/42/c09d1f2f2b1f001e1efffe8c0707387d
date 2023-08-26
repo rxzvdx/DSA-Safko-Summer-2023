@@ -1,0 +1,7 @@
+
+public class NodeInt 
+{
+	private int data;
+	protected NodeInt next;
+	
+}

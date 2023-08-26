@@ -1,0 +1,28 @@
+Pre Order T - Visit, Left, Right
+
+Post Order T - Left, Right, Visit
+
+In Order T - Left, Visit, Right
+QOTD:  Given a tree of T, M, G, C, B, K, H, W, U, V, X give the preorder, postorder, and inorder of the tree.
+
+Pre Order: T -> M -> G -> C -> B -> K -> H -> W -> U -> V -> X
+
+Post Order: B -> C -> H -> K -> G -> M -> V -> U -> X -> W -> T
+
+In Order: B -> C -> G -> H -> K -> M -> T -> U -> V -> W -> X
+
+
+Recap:
+Full: A binary tree with each node having 0 or 2 children
+Complete: A levels filled, but level (n-1) is filled “completely” from the left
+Perfect: A levels filled to max capacity.
+
+$ - in order predecessor; largest item in the left subtree
+$$ - in order successor; next element after root, i.e. root of right subtree
+
+Map: key, value pair
+M<k,v> 
+{} Sets: An unordered list of related elements. Duplicates not permitted, but if they appear 
+they're only counted once.
+[] Bags: Also called a 'multiset'. An unordered list of related elements; duplicates permitted
+<> Tuples: Also called a 'sequence' An ordered list of unrelated elements; duplicated permitted. 

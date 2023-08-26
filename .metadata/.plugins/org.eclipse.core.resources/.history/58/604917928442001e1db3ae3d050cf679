@@ -1,0 +1,13 @@
+import java.util.ArrayList;
+
+// DOUBLY ENDED QUEUE
+public class Deque<T>
+{
+	private ArrayList<T> dq;
+	
+	
+	public Deque() 
+	{
+		dq = 
+	}
+}

@@ -1,0 +1,74 @@
+import java.util.ArrayList;
+
+public class PriorityQueueAR<T extends Comparable<T> >
+{
+	/*
+	 * Use an ArrayList as the collection vehicle
+	 * Position 0 is max value, pos (size - 1) is min
+	 * pop/peek at 0, push at (size - 1)
+	 * This is Min Value Priority Queue (max at left, lower at right)
+	 * EX: 31, 26, 17, 0, -4
+	 * EX: "Br", "Xn", "ae", "etz", "xyz" -> ascii (66, 88, 97, 101, 120 {roughly})
+	 */
+	private ArrayList<T> pq = new ArrayList<T>();
+	
+	public PriorityQueueAR()
+	{
+
+	}
+	
+	public void push(T data) 
+	{
+		// if the list is empty, just add the data
+		if(pq.isEmpty()) 
+		{
+			pq.add(data);
+			return;
+		}
+		
+		// if the data is larger than pos(0), add it to pos(0)
+		if(data.compareTo(pq.get(0)) < 0) 
+		{
+			pq.add(0, data);
+			return;
+		}
+		
+		// if the data is smaller than pos (size - 1), add to end
+		if(data.compareTo(pq.get(pq.size() - 1)) > 0) 
+		{
+			pq.add(data);
+			return;
+		}
+		
+		// otherwise, traverse from back to front (size - 1) to 0
+		// and place it where p(x) >= data > p(x - 1)
+		for(int i = pq.size() - 1; i > 0; i--) 
+		{
+			if(data.compareTo(pq.get(i)) <= 0 && data.compareTo(pq.get(i - 1)) > 0) 
+			{
+				pq.add(i, data);
+			}
+		}
+	}
+	
+	public void pop()
+	{
+		pq.remove(0);
+	}
+	
+	public T top()
+	{
+		return pq.get(0);
+	}
+	
+	public T peek()
+	{
+		return top();
+	}
+	
+	@Override
+	public String toString()
+	{
+		return pq.toString();
+	}
+}

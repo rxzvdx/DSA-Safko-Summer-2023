@@ -1,0 +1,26 @@
+
+public class NodeInt 
+{
+	private int data;
+	protected NodeInt next;
+	protected NodeInt prev; 
+	
+	// constructors
+	public NodeInt() 
+	{
+		data = 0;
+		next = null;
+		prev = null;
+	}
+	
+	public NodeInt(int d, NodeInt n) 
+	{
+		data = d;
+		next = n;
+	}
+	
+	// setters/mutators
+	
+	// getters/accessors
+	
+}

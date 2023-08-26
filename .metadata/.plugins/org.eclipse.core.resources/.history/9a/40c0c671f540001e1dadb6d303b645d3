@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class FinalStuffAR 
+{
+	static final boolean DEBUG = true;
+	static Scanner scan = new Scanner(System.in);
+	static PriorityQueueAR<String> pq = new PriorityQueueAR<String>();
+	static int choice;
+	static String sChoice;
+	static String data;
+
+	public static void main(String[] args) 
+	{
+		printHeader();
+		System.out.println("Final stuff...");
+		do 
+		{
+			printMenu();
+			System.out.print("Enter your choice: ");
+			sChoice = scan.nextLine();
+			System.out.println("You have entered " + choice);
+			switch(choice) 
+			{
+				case 1:
+					break;
+			}
+		}while(true);
+		
+	}
+	
+	public static void printHeader()
+	{
+		System.out.println("Final Exam Stuff.");
+		System.out.println("Author: Antonio Rosado");
+	} 
+	
+	public static void printMenu() 
+	{
+		System.out.println("A Priority Queue Menu System");
+		System.out.println("Select from the following menu:");
+		System.out.println("1. Push an item.");
+		System.out.println("2. Peek an item.");
+		System.out.println("3. Remove an item.");
+		System.out.println("4. Print the queue.");
+		System.out.println("99. Quit.");
+	}
+}

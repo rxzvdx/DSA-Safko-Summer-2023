@@ -1,0 +1,9 @@
+INDEX VERSION 1.131+C:\Users\ranto\OneDrive\Desktop\Java\DSA\.metadata\.plugins\org.eclipse.jdt.core
+2379462560.index
+2453370949.index
+829254551.index
+1865797976.index
+335059965.index
+1748073768.index
+1288524166.index
+760091825.index

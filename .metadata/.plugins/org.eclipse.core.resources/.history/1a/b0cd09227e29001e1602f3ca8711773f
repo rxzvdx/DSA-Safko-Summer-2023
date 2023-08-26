@@ -1,0 +1,83 @@
+public class Queue<T> implements QueueMethods<T> {
+    private Node<T> head;
+    private Node<T> tail;
+    private int size;
+
+    public Queue() {
+        this.head = null;
+        this.tail = null;
+        this.size = 0;
+    }
+
+    // Method to check if the queue is empty
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    // Method to get the size of the queue
+    public int getSize() {
+        return size;
+    }
+
+    // Method to push an element to the tail of the queue
+    public void push(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (isEmpty()) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        size++;
+    }
+
+    // Method to pop an element from the head of the queue
+    public void pop() {
+        if (!isEmpty()) {
+            head = head.next;
+            size--;
+        }
+    }
+
+    // Method to peek (examine but not remove) the element at the head of the queue
+    public T peek() {
+        if (!isEmpty()) {
+            return head.data;
+        }
+        return null;
+    }
+
+    // Method to push an element after the tail of the queue (pushBack)
+    public void pushFront(T data) {
+        push(data);
+    }
+
+    // Method to pop an element from the tail of the queue (popFront)
+    public void popBack() {
+        pop();
+    }
+
+    // Method to peek (examine but not remove) the element at the tail of the queue (peekFront)
+    public T peekFront() {
+        return peek();
+    }
+
+    // Method to peek (examine but not remove) the element at the head of the queue (peekBack)
+    public T peekBack() {
+        if (!isEmpty()) {
+            return tail.data;
+        }
+        return null;
+    }
+
+    // Method to print the elements of the queue
+    public void print() {
+        Node<T> current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+}

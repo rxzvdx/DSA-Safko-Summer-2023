@@ -1,0 +1,48 @@
+
+public class DequeDriver 
+{
+
+	public static void main(String[] args) 
+	{
+		Deque<String> SP = new Deque<String>();
+		SP.print();
+		
+		System.out.println();
+		SP.pushFront("Kyle");
+		SP.print();
+		
+		System.out.println();
+		SP.pushFront("Kenny");
+		SP.print();
+		
+		System.out.println();
+		SP.pushBack("Cartman");
+		SP.print();
+		
+		System.out.println();
+		System.out.println(SP.topBack());
+		
+		SP.print();
+		System.out.println();
+		
+		SP.pushFront("Bart");
+		SP.print();
+		
+		System.out.println();
+		SP.pushBack("Butters");
+		SP.print();
+		
+		System.out.println();
+		// loop thorugh and empty the list from the front
+		// display each removed item
+		System.out.println("Removing front items...");
+		for(int i = 0; i <= SP.size(); i++)
+		{
+			SP.print();
+			System.out.println("Item: " + SP.topFront() + " removed.");
+			SP.popFront();
+			SP.print();
+			System.out.println();
+		}
+	}
+}

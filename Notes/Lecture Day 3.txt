@@ -1,0 +1,18 @@
+Linked Lists Using Array Lists:
+Pros: 
+uses indices
+easy to code
+
+Cons:
+Has overhead to use
+Consumes extra memory
+
+Linked Lists Using Nodes:
+Pros:
+Memory efficient
+Efficient insertions and deletions
+Minimal overhead
+
+Cons:
+More difficult to code
+No indices

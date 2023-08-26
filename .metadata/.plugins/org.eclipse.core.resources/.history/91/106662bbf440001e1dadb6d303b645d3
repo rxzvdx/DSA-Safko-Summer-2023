@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class FinalStuffAR 
+{
+	static final boolean DEBUG = true;
+	static Scanner scan = new Scanner(System.in);
+	static PriorityQueueAR<String> pq = new PriorityQueueAR<String>();
+	static int choice;
+	static String data;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("Final stuff...");
+		do 
+		{
+			
+		}while(true);
+		
+	}
+	
+	public static void printMenu() 
+	{
+		System.out.println("A basic menu system: \n"
+				+ "1. Place an element at the head of the Linked List \n"
+				+ "2. Place an element at the tail of the Linked List \n"
+				+ "3. Remove an element from the head of the Linked List \n"
+				+ "4. Remove an element from the tail of the Linked List \n"
+				+ "5. Examine the element at the head of the Linked List \n"
+				+ "6. Examing the element at the tail of the Linked List \n"
+				+ "7. Place an element at a given position in the Linked List \n"
+				+ "8. Remove an element at a given position in the Linked list \n"
+				+ "9. Examine an element at a given position in the Linked List \n"
+				+ "10. Check if the Linked List is empty. \n"
+				+ "11. Get the current size of the Linked List. \n"
+				+ "12. Clear the contents of the Linked List \n"
+				+ "13. Print the contents of the Linked List \n"
+				+ "14. Quit");
+	}
+}

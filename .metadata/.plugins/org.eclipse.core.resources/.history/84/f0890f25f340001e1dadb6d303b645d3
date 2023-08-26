@@ -1,0 +1,12 @@
+
+public class PriorityQueueAR<T>
+{
+	/*
+	 * Use an ArrayList as the collection vehicle
+	 * Position 0 is max value, pos (size - 1) is min
+	 * pop/peek at 0, push at (size - 1)
+	 * This is Max Value Priority Queue (max at left, lower at right)
+	 * EX: 31, 26, 17, 0, -4
+	 * EX: "Br", "Xn", "ae", "etz", "xyz" -> ascii (66, 78, 97, 101, 110 {roughly})
+	 */
+}

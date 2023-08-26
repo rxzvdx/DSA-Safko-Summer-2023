@@ -1,0 +1,32 @@
+We will know if a circularly linked list is done when the tail points to 
+the head. 
+head.next = tmp;
+tmp.next = head;
+
+ArrayLists vs. LinkedList
+
+Pros of ArrayList:
+An array, and contiguous
+Inherits from List class
+Better for storing and accessing
+
+Cons of ArrayList:
+With every deletion, the array needs to be rebuilt
+Slow
+Default capacity of 10
+
+Pros of LinkedList:
+Uses doubly linked list
+Fast
+Can act as a list and a queue
+Better for data manipulation
+
+Cons of LinkedList:
+Not contiguous
+
+Stacks & Queues:
+LIFO - last in first out - stack
+FIFO - first in first out - queue
+Check if palindrome with a stack by creating temp stack with previous 
+stack elements and peeking, then popping each value, if all match 
+then palindrome, if not then not a palindrome.

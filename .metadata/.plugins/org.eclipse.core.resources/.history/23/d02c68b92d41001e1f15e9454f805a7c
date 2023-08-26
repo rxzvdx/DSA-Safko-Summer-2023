@@ -1,0 +1,11 @@
+import java.util.ArrayList;
+
+public class Hospital 
+{
+	ArrayList<Patient> pq = new ArrayList<Patient>();
+	public static void main(String[] args) 
+	{
+
+	}
+
+}

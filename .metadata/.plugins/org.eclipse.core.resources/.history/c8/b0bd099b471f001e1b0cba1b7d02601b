@@ -1,0 +1,49 @@
+
+public class NodeInt 
+{
+	private int data;
+	protected NodeInt next;
+	protected NodeInt prev; 
+	
+	// constructors
+	public NodeInt() 
+	{
+		data = 0;
+		next = null;
+		prev = null;
+	}
+	
+	public NodeInt(int d, NodeInt n) 
+	{
+		data = d;
+		next = n;
+	}
+	
+	// setters/mutators
+	public void setData(int data) 
+	{
+		this.data = data;
+	}
+	
+	public void setNext(NodeInt next) 
+	{
+		this.next = next;
+	}
+	
+	// getters/accessors
+	public int getData() 
+	{
+		return data;
+	}
+	
+	public NodeInt getNext() 
+	{
+		return next;
+	}
+	
+	@Override
+	public String toString() 
+	{
+		return "Data = " + String.valueOf(data);
+	}
+}

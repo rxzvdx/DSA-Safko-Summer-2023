@@ -1,0 +1,42 @@
+A - B - G
+\   \   /
+ D    C
+  \
+   E 
+    
+
+     to	  A B C D E G
+from	A 0 1 1 1 0 0
+	B 1 0 1 0 0 1
+	C 1 1 0 0 0 1
+	D 1 0 0 0 1 0
+	E 0 0 0 0 0 0
+	G 0 1 1 0 0 0
+
+Cost Adjacency Matrix (CAM)
+
+Minimal Cost Spanning Tree (MCST)
+1 -> 2 = 28
+2 -> 7 = 14
+2 -> 3 = 16
+3 -> 4 = 12
+4 -> 7 = 18
+4 -> 5 = 22
+5 -> 7 = 24
+5 -> 6 = 26
+6 -> 1 = 10
+
+14 + 16 + 12 + 26 + 10 = 100
+
+Robert Prim & Joseph Kruskal came up with two separate algorithms that work.
+
+Prim - Start at same node. Add lowest edges as long as no cycles are produced. Finished when all nodes are connected.
+
+Kruskal - Start at Tree T node made up of all vertices and no edges.
+Add longest cost edge to T, continue adding lowest cost edges.
+If a cycle is produced, add next lowest cost. 
+Stop when n - 1 edges are added to n vertices.
+
+Using Kruskal: 10 + 12 + 14 + 16 + 22 + 26 = 100
+Using Prim: 14 + 16 + 12 + 22 + 26 + 10 = 100
+

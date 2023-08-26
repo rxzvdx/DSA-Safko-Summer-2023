@@ -1,0 +1,22 @@
+Anything that can be done recursively can be done iteratively, 
+and vice versa. 
+The iterative solution is always the best option
+Binary trees have 0 or 1 children
+
+Tree vocab:
+Full - All nodes have 0,1, or 2 children
+Complete - All levels filled but last level is filled from the left
+Perfect - full and complete
+Depth is the longest branch, count edges without root
+
+Binary Search Trees
+L.data < p.data < r.data (left, parent, right)
+			20
+		       /  \
+		      8    40
+		     / \  /  \
+		    4  17 30 70
+NO DUPLICATES IN BST
+k = key
+add(key)
+delete()

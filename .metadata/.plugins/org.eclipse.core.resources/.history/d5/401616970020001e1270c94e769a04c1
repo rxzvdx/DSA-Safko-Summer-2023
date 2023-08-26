@@ -1,0 +1,35 @@
+/*
+ * Author: Antonio Rosado
+ * Date: 7/10/23
+ * Lecture 2: Linked Lists
+ */
+public class Lecture02LinkedListsAR {
+	
+	public static void main(String[] args) 
+	{
+		System.out.println("Welcome to Lecture 02");
+		linkedList ll = new linkedList();
+		ll.insertAtHead(10);
+		ll.insertAtHead(14);
+		ll.insertAtHead(19);
+		ll.insertAtTail(25);
+		ll.insertAtPos(99, 2);
+		ll.printList();
+		System.out.println("The size is " + ll.getSize());
+		ll.insertAtPos(100, 100);
+		ll.deleteAtPos(3);
+		System.out.println("Pos 3 deleted");
+		ll.getAtPos(3);
+		ll.printList();	
+		System.out.println("The size is " + ll.getSize());
+		ll.deleteHead();
+		System.out.println("Head deleted");
+		ll.printList();
+		System.out.println("The size is " + ll.getSize());
+		ll.deleteTail();
+		System.out.println("Tail deleted");
+		ll.printList();
+		System.out.println("The size is " + ll.getSize());
+	}
+	
+}

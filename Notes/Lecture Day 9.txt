@@ -1,0 +1,32 @@
+left.data < root.data < right.data
+	x
+      /   \
+     <x   >x
+
+Heap -> A complete tree in which every left-parent right-parent trio satisfies 
+the following:
+root > left && root > right
+
+Heap Sort
+Max Heap
+Heapify
+Re Heapify
+
+Remove + set aside the top(root)
+Replace top with right most element in last row (thus preserving the heap structure)
+Heapify
+
+Input j.u.Q
+ArrayList<Integer> mpq = new ArrayList<Integer>();
+Queue<Integer> mpq2 = new Queue<Integer>();
+Can’t use it this way. Use this instead: = new LinkedList<Integer>();
+mpq.push(val);
+Priority queue pushes it to the front.
+If empty… place at front of queue.
+If size == 1
+If val > peek().value
+     Place at front
+else
+     Place at back.
+
+Apple.compareTo(

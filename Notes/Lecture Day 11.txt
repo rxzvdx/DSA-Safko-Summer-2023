@@ -1,0 +1,11 @@
+1. What is a Minimal Cost Spanning Tree (MCST)?
+Tree that connects nodes from a graph with least amount of weight (weight of edges).
+
+2. What is the process for generating on MCST using Prim's Algorithm?
+(Prim starts with vertices), pick the node to begin with, then starting
+from said node and continue adding nodes while not forming a cycle.
+
+3. ..... Kruskal's algorithm?
+(Kruskal starts with edges; lowest edge), build from there and do
+not form a cycle.
+

@@ -1,0 +1,205 @@
+/*
+ * Author: Antonio Rosado
+ * Date: 7/10/23
+ * Lecture 2: Linked Lists
+ */
+public class linkedList 
+{
+	protected NodeInt head;
+	protected NodeInt tail;
+	public int size;
+	
+	// constructor
+	public linkedList() 
+	{
+		head = null;
+		tail = null;
+		size = 0;
+	}
+	
+	public boolean isEmpty() 
+	{
+		//return (size == 0);
+		// or
+		return (head == null);
+	}
+	
+	public int getSize() 
+	{
+		return size;
+	}
+	
+	/*
+	 * TO DO:
+	 * insertAtHead DONE
+	 * insertAtTail DONE
+	 * insertAtPos 	DONE
+	 * deleteAtPos 	DONE
+	 * getAtPos 	DONE
+	 * printList 	DONE
+	 */
+	
+	public void insertAtHead(int val) 
+	{
+		NodeInt nptr = new NodeInt(val, null); // node pointer
+		if(head == null)
+		{
+			head = nptr;
+			tail = head;
+		}
+		else 
+		{
+			nptr.setNext(head);
+			head = nptr;
+		}
+		size++;
+	}
+	
+	public void insertAtTail(int val) 
+	{
+		NodeInt nptr = new NodeInt(val, null); // node pointer
+		if(head == null)
+		{
+			head = nptr;
+			tail = head;
+		}
+		
+		else 
+		{
+			tail.setNext(nptr);
+			tail = nptr;
+		}
+		size++;
+	}
+	
+	public void insertAtPos(int val, int pos) 
+	{
+		if (pos == 0) 
+		{
+			insertAtHead(val);
+			return;
+		}
+		NodeInt nptr = new NodeInt(val, null);
+		NodeInt ptr = head;
+		
+		pos = pos - 1;
+		for(int i = 0; i < size - 1; i++) // fixed error
+		{
+			if(i == pos) 
+			{
+				NodeInt tmp = ptr.getNext();
+				ptr.setNext(nptr);
+				nptr.setNext(tmp);
+			}
+			ptr = ptr.getNext();
+		}
+		size++;
+		pos = pos + 1;
+	}
+	
+	public boolean deleteAtPos(int pos) 
+	{
+		if(pos > size - 1 || pos < 0 ) 
+		{
+			return false;
+		}
+		
+		if(pos == 0) 
+		{
+			head = head.getNext();
+			if(head == null) 
+			{
+				tail = null;
+			}
+			return false;
+		}
+		else 
+		{
+			NodeInt ptr = head;
+			pos = pos - 1;
+			for(int i = 0; i < pos; i++) 
+			{
+				ptr = ptr.getNext();
+			}
+			NodeInt tmp = ptr.getNext();
+			ptr.setNext(tmp.getNext());
+			if(ptr.getNext() == null) 
+			{
+				tail = ptr;
+			}
+			size--;
+			return true;
+		}
+	}
+	
+	public int getAtPos(int pos) 
+	{
+		if(pos < 0 || pos >= size) 
+		{
+			return -99;
+		}
+		NodeInt ptr = head;
+		for (int i = 0; i < pos; i++) {
+			ptr = ptr.getNext();
+		}
+		return ptr.getData();
+	}
+	
+	public boolean deleteHead() 
+	{
+		if(this.head != null) 
+		{
+			this.head = head.next;
+			size--;
+			System.gc(); // remove unused nodes
+			return true;
+		}
+		else 
+		{
+			return false;
+		}
+	}
+	
+	public boolean deleteTail() 
+	{
+		if(this.tail != null)
+		{
+			NodeInt tmp = new NodeInt();
+			tmp = this.tail.prev;
+			tmp.next = null;			
+			size--;
+			return true;
+		}
+		
+		else 
+		{
+			return false;
+		}
+	}
+	
+	public void printList() 
+	{
+		System.out.print("\nSingly Linked List = ");
+		if(size == 0) 
+		{
+			System.out.println("Empty");
+			return;
+		}
+		
+		if(head.getNext() == null) 
+		{
+			System.out.println(head.getData());
+			return;
+		}
+		NodeInt ptr = head;
+		System.out.print(head.getData() + " -> ");
+		ptr = head.getNext();
+		while(ptr.getNext() != null) 
+		{
+			System.out.print(ptr.getData() + " -> ");
+			ptr = ptr.getNext();
+		}
+		System.out.print(ptr.getData() + "\n");
+	}
+	
+}

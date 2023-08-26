@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+
+// DOUBLY ENDED QUEUE
+public class Deque<T>
+{
+	private ArrayList<T> dq;
+	
+	public Deque() 
+	{
+		dq = new ArrayList<T>();
+	}
+	
+	// push/pop/top/size/isEmpty/print-display
+	
+	public void pushFront(T item) 
+	{
+		dq.add(item);
+	}	
+	
+	public void pushBack(T item) 
+	{
+		
+	}
+	
+	public void pop() 
+	{
+		
+	}
+	
+	public void top() 
+	{
+		
+	}
+	
+}

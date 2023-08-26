@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+
+public class PriorityQueueAR<T>
+{
+	/*
+	 * Use an ArrayList as the collection vehicle
+	 * Position 0 is max value, pos (size - 1) is min
+	 * pop/peek at 0, push at (size - 1)
+	 * This is Min Value Priority Queue (max at left, lower at right)
+	 * EX: 31, 26, 17, 0, -4
+	 * EX: "Br", "Xn", "ae", "etz", "xyz" -> ascii (66, 88, 97, 101, 120 {roughly})
+	 */
+	private ArrayList<T> pq = new ArrayList<T>();
+	
+	public PriorityQueueAR()
+	{
+
+	}
+	
+	public void push(T data) 
+	{
+		pq.add(data);
+	}
+	
+	public void pop()
+	{
+		pq.remove(0);
+	}
+	
+	public T top()
+	{
+		return pq.get(0);
+	}
+	
+	public T peek()
+	{
+		return top();
+	}
+	
+	@Override
+	public String toString()
+	{
+		return pq;
+	}
+}

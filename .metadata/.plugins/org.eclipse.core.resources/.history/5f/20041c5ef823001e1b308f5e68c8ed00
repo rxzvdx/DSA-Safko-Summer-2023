@@ -1,0 +1,148 @@
+/*
+ * Author: Antonio Rosado
+ * Date: 7/10/23
+ * Lecture 2: Linked Lists
+ */
+import java.util.Scanner;
+public class Lecture02LinkedListsAR {
+	
+	public static void main(String[] args) 
+	{
+		final boolean DEBUG = true;
+		Scanner scan = new Scanner(System.in);
+		Node<Integer> iNode = new Node<Integer>();
+		Node<Character> cNode = new Node<Character>();
+		linkedList ll = new linkedList();
+		String sChoice;
+		int iChoice;
+		char cData;
+		int pos;
+		
+		do 
+		{
+			
+			System.out.print("Enter your choice: ");
+			sChoice = scan.next();
+			iChoice = Integer.parseInt(sChoice);
+			System.out.println("You have entered " + iChoice);
+			switch(iChoice) 
+			{
+				case 1:
+					System.out.print("Enter the character to add: ");
+					sChoice = scan.nextLine();
+					cData = sChoice.charAt(0);
+					ll.insertAtHead(input);
+					break;
+					
+				case 2:
+					break;
+					
+				case 3:
+					break;
+					
+				case 4:
+					break;
+
+				case 5:
+					break;
+
+				case 6:
+					break;
+
+				case 7:
+					break;
+
+				case 8:
+					break;
+
+				case 9:
+					break;
+
+				case 10:
+					break;
+
+				case 11:
+					break;
+
+				case 12:
+					break;
+
+				case 13:
+					break;
+
+				case 14:
+					System.out.print("Are you sure you want to quit? [Y/N]");
+					cData = scan.nextLine().toUpperCase().charAt(0);
+					if(cData == 'Y') 
+					{
+						System.out.println("Quitting...");
+						scan.close();
+						System.exit(0);
+					}
+					break;
+				
+				default:
+					System.out.println("Invalid selection, try again.");
+					break;
+
+			}
+		}while(true);
+	} // end of psvm
+	
+	public static void printHeader() 
+	{
+		
+	}
+	public static void printMenu() 
+	{
+		System.out.println("Select from the following menu: \n"
+				+ "1. Place an element at the head of the Linked List \n"
+				+ "2. Place an element at the tail of the Linked List \n"
+				+ "3. Remove an element from the head of the Linked List \n"
+				+ "4. Remove an element from the tail of the Linked List \n"
+				+ "5. Examine the element at the head of the Linked List \n"
+				+ "6. Examing the element at the tail of the Linked List \n"
+				+ "7. Place an element at a given position in the Linked List \n"
+				+ "8. Remove an element at a given position in the Linked list \n"
+				+ "9. Examine an element at a given position in the Linked List \n"
+				+ "10. Check if the Linked List is empty. \n"
+				+ "11. Get the current size of the Linked List. \n"
+				+ "12. Clear the contents of the Linked List \n"
+				+ "13. Print the contents of the Linked List \n"
+				+ "14. Quit");
+	}
+} // end of class
+//
+//		Node<Integer> iNode = new Node<Integer>();
+//		Node<Character> cNode = new Node<Character>();
+//		
+//		System.out.println("Welcome to Lecture 02");
+//		linkedList ll = new linkedList();
+//		ll.insertAtHead(10);
+//		ll.insertAtHead(14);
+//		ll.insertAtHead(19);
+//		ll.insertAtTail(25);
+//		ll.insertAtPos(99, 2);
+//		ll.printList();
+//		System.out.println("The size is " + ll.getSize());
+//		// check insertAtPos, if pos bigger than size, item becomes tail
+//		ll.insertAtPos(100, 100);
+//		ll.deleteAtPos(3);
+//		System.out.println("Pos 3 deleted");
+//		ll.getAtPos(3);
+//		// check if pos 3 was deleted
+//		ll.printList();	
+//		System.out.println("The size is " + ll.getSize());
+//		// delete head
+//		ll.deleteHead();
+//		System.out.println("Head deleted");
+//		ll.printList();
+//		System.out.println("The size is " + ll.getSize());
+//		// delete tail
+//		ll.deleteTail();
+//		System.out.println("Tail deleted");
+//		ll.printList();
+//		System.out.println("The size is " + ll.getSize());
+//	}
+//	
+//}

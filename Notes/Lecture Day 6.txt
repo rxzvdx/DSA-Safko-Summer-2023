@@ -1,0 +1,32 @@
+How can you (abuse?) a priority queue to sort a list?
+What is big O of a priority queue?
+Goes through list of n, n times so O(N^2).
+
+To check a palindrome with a DEQ:
+Put it onto the DEQ with nothing but alphas
+
+Begin with topfront() to peek, then popFront() to remove
+Compare topBack() and topFront(), if == remove them
+If not, not a palindrome, cease iteration.
+
+Check if size is one because when you get to the middle 
+char it will crash as there is not a second element to remove.
+
+Use compareTo() for ordering strings by ASCII value.
+
+Trees:
+
+A collection of vertices & edges where no cycle is produced.
+
+Binary Tree:
+
+It’s a tree where each vertex has 0, 1, or 2 leaf nodes.
+
+Graphs: 
+
+A graph is a collection of a set of vertices & edges.
+
+Example: G = {V, E}
+                V = {V1, v2, v3, v4, v5}
+                E = {e1, e2, e3}
+If an edge along v3 and v1 is a weight of 7. It will take 7 to reach between the nodes.

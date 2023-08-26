@@ -1,0 +1,8 @@
+
+public class PriorityQueueAR<T>
+{
+	/*
+	 * Use an ArrayList as the collection vehicle
+	 */
+	
+}

@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class FinalStuffAR 
+{
+	static final boolean DEBUG = true;
+	static Scanner scan = new Scanner(System.in);
+	String sChoice;
+	int iChoice;
+	char cData;
+	int pos;
+	public static void main(String[] args) 
+	{
+		System.out.println("Final stuff...");
+		
+	}
+}

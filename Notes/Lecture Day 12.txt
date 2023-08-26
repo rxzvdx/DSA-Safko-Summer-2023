@@ -1,0 +1,60 @@
+Algorithm Analysis:
+
+Final:
+Coding section
+Something to draw
+Multiple choice
+Free response
+Cheat sheet 8.5 x 11, front and back
+
+height vs depth:
+height - node count; n + 1
+depth  - edge count; n
+
+Self-Balancing Trees:
+B-Tree: The B-Tree is a self-balancing tree data structure that 
+maintains sorted data and allows searches, sequential access, 
+insertions, and deletions in logarithmic time. The B-tree generalizes 
+the binary search tree, allowing for nodes with more than two children. 
+Unlike other self-balancing binary search trees, the B-tree is well 
+suited for storage systems that read and write relatively large 
+blocks of data, such as databases and file systems.
+
+Space - Average Case = O(n), Worst Case = O(n)
+Search, Insert, and Delete - Average Case and Worst Case = O(log n)
+
+2-3 Tree: 2-3 Tree is a tree that is a 2–3 tree is data structure, where 
+every node with children (internal node) has either two children 
+(2-node) and one data element or three children (3-nodes) and 
+two data elements. A 2–3 tree is a B-tree of order 3. Nodes on 
+the outside of the tree (leaf nodes) have no children and one 
+or two data elements.
+
+Space - Average and Worst Case = O(n)
+Search, insert, and Delete - Average Case and Worst Case = O(log n)
+
+AVL Tree: an AVL tree (named after inventors Adelson-Velsky and Landis) is a self-balancing binary search tree. In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property.
+
+Space - Average and Worst Case = O(n)
+Search, insert, and Delete - Average Case and Worst Case = O(log n)
+
+Red–Black Tree: A red-black tree is a binary search tree which has the following red-black properties: Every node is either red or black. Every leaf (NULL) is black. If a node is red, then both its children are black. Every simple path from a node to a descendant leaf contains the same number of black nodes.
+
+Space - Average and Worst Case = O(n)
+Search - Average and Worst Case = O(log n)
+Insert and Delete Average Case = O(1), Worst Case = O(log n)
+
+Splay Tree: A splay tree is a binary search tree with the additional property that recently accessed elements are quick to access again. Like self-balancing binary search trees, a splay tree performs basic operations such as insertion, look-up and removal in O(log n) amortized time.
+
+Space - Average and Worst Case = O(n)
+Search, Insert, and Delete - Average Case = O(log n), Worst Case = O(n)
+
+Tango Tree - It is an online binary search tree that achieves an O(log log n) competitive ratio relative to the offline optimal binary search tree, while only using O(log log n) additional bits of memory per node. This improved upon the previous best known competitive ratio, which was O(log n)
+
+Scapegoat Tree: A scapegoat tree is a self-balancing binary search tree. Unlike most other self-balancing binary search trees which also provide worst case O(log n) lookup time, scapegoat trees have no additional per-node memory overhead compared to a regular binary search tree: besides key and value, a node stores only two pointers to the child nodes. This makes scapegoat trees easier to implement and, due to data structure alignment, can reduce node overhead by up to one-third.
+
+Treap: The treap and the randomized binary search tree are two closely related forms of binary search tree data structures that maintain a dynamic set of ordered keys and allow binary searches among the keys. After any sequence of insertions and deletions of keys, the shape of the tree is a random variable with the same probability distribution as a random binary tree; in particular, with high probability its height is proportional to the logarithm of the number of keys, so that each search, insertion, or deletion operation takes logarithmic time to perform.
+
+Space - Average Case and Worst Case = O(n)
+Search, Insert, and Delete - Average Case = O(log n), Worst Case = O(n)
+

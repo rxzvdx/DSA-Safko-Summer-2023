@@ -1,0 +1,48 @@
+Pros and Cons for Arraylists and Linked Lists Java.util
+
+Arraylists Pro: Sorting and accessing data
+Arraylists Con: Dynamic array, meaning that every deletion causes the array to be rebuilt.
+LinkedLists Pro: Good for manipulating data.
+Linked List Con: Fractured nodes, making it non-contiguous.
+
+Palindromes is kayak, racecar, madam
+Madam, I’m Adam
+
+{ { ( [ ] ) {  }<>} }
+
+You push the left parameters and pop the right parameters. For example, (, [, {, or < will be pushed and any ), ], }, or > will be popped. However, if the species of the param doesn’t match, the check fails. This can be used for checking palindromes and balanced param.
+
+Can we have a stack of queues? Yes
+Can we have a queue of stacks? Yes
+
+We already analyzed how to implement a palindrome checker using two stacks.
+
+Can you do it using 1 stack and 1 queue?
+Yes. Example used was Kayak
+Can you do it using a single deque?
+Yes. Kayak was used as an example again.
+Can you do it using 2 queues?
+Yes. Kayak used as an example again in all uppercase.
+Can you use it using DEQ?
+Yes.
+
+
+
+Future labs:
+Palindrome Checker
+
+
+Anagram Checker
+Using anagram, (using sorting).
+Dormitory -> Dirty Room
+Alec Guiness -> Genuine Class
+
+RPN Calculator
+
+RPN (Reverse Polish Notation) Calculator can be an example for the stream of using stacks.
+
+RPN of 6 * 2 + 4 = 6, 2, , 4, +
+RPN of 6 (2 + 4) = 6, 2, 4, +, *
+= 2 + 4 = 6 * 6 = 36.
+
+Balanced Delimiter Checker

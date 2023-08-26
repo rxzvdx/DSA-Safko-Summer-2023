@@ -1,0 +1,258 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+public class Lecture07CostAdjacencyMatrixAR 
+{
+	static ArrayList<String> vertices = new ArrayList<String>();
+	static ArrayList<String> rowData = new ArrayList<String>();
+	static String header = "";
+	static String fileName = "";
+	static Scanner scan = new Scanner(System.in);
+	static int matrix[][];
+	final static boolean DEBUG = true;
+	public static void main(String[] args) 
+	{
+		// USER INPUT PROMPTS
+		String sChoice;
+		int iChoice;
+		char cData;	
+		printHeader();
+		do 
+		{
+			printMenu();
+			System.out.print("Enter your choice: ");
+			sChoice = scan.next();
+			iChoice = Integer.parseInt(sChoice);
+			System.out.println("You have entered " + iChoice);
+			switch(iChoice)
+			{
+				case 1:
+					/*
+					 *  FILE READING:
+					 *  1. locate and open a file (test.txt)
+					 *  2. and print the contents (line by line)
+					 *  3. store the first line in an ArrayList (vertices)...
+					 *  4. one city name at a time
+					 *  5. close the file
+					 */
+					populateMatrix();
+					break;
+	
+				case 2:
+					// alignment wrong, data just looks weird
+					printMatrix();
+					break;
+	
+				case 3:
+					if(matrix != null)
+					{
+						MCSTPrim t = new MCSTPrim(); 
+						t.primMCST(matrix);
+						break;
+					}
+					
+					else 
+					{
+						System.out.println("Matrix is empty, populate the matrix to run an algorithm.");
+					}
+					break;
+					
+				case 4:
+					if(matrix != null)
+					{
+						MCSTKruskal t2 = new MCSTKruskal();
+						List<MCSTKruskal.Edge> mstEdges = t2.kruskals(matrix.length, matrix);
+						System.out.println("Edge \tWeight");
+						int totalCost = 0;
+						for (MCSTKruskal.Edge edge : mstEdges) 
+						{
+							System.out.println(edge.src + " -- " + edge.dest + "\t" + edge.weight);
+							totalCost += edge.weight;
+						}
+						System.out.println("Total cost of MST: " + totalCost);
+					}
+					
+					else 
+					{
+						System.out.println("Matrix is empty, populate the matrix to run an algorithm.");
+					}
+					break;
+	
+				case 5:
+					System.out.println("Are you sure you want to quit? [Y/N]");
+					cData = scan.next().toUpperCase().charAt(0);
+					if (cData == 'Y')
+					{
+						System.out.println("Exiting the menu, goodbye.");
+						scan.close();
+						System.exit(0);
+						break;
+					}
+					break;
+	
+				case 6:
+					System.out.println("[Enter pass key]: ");
+					cData = scan.next().toUpperCase().charAt(0);
+					if (cData == '$')
+					{
+						debugger();					
+					}		
+					else 
+					{
+						System.out.println("Incorrect pass key.");
+						System.out.println("Exiting the menu, goodbye.");
+						scan.close();
+						System.exit(0);
+					}		
+					break;
+					
+				default:
+					System.out.println("Invalid choice. Try again.");
+					break;
+			}
+		}while(true);
+	}
+
+	private static void populateMatrix()
+	{
+		System.out.print("Enter the name of the file: ");
+		fileName = scan.next();
+		try 
+		{
+			FileReader fileRead = new FileReader(fileName);
+			System.out.println("File entered successfully.");
+			BufferedReader buffRead = new BufferedReader(fileRead);
+			header = buffRead.readLine(); // Reading the header
+			String[] verticesArray = header.split(", "); // Splitting the header into vertices
+			vertices = new ArrayList<>(Arrays.asList(verticesArray));
+			int size = vertices.size();
+			matrix = new int[size][size];
+
+			for (int i = 0; i < size; i++) 
+			{
+				String[] rowValues = buffRead.readLine().split(", ");
+				for (int j = 0; j < size; j++) 
+				{
+					matrix[i][j] = Integer.parseInt(rowValues[j]);
+				}
+			}
+
+			System.out.println("Matrix populated.");
+			fileRead.close();
+		} 
+
+		catch (FileNotFoundException e) 
+		{
+			System.out.println("ERROR: File not found.");
+		}
+
+		catch (Exception e) 
+		{
+			System.out.println("An error occurred: " + e.getMessage());
+		}
+	}
+
+	private static void printMatrix() 
+	{
+	    if (matrix != null) 
+	    {
+	        int maxColumnWidth = vertices.stream().mapToInt(String::length).max().orElse(0);
+
+	        // Print header row
+	        System.out.printf("%" + (maxColumnWidth + 1) + "s", "");
+	        for (String city : vertices) 
+	        {
+	            System.out.printf("%" + (maxColumnWidth + 3) + "s", city);
+	        }
+	        System.out.println();
+
+	        // Print matrix rows
+	        for (int i = 0; i < matrix.length; i++) 
+	        {
+	            System.out.printf("%" + (maxColumnWidth + 1) + "s", vertices.get(i));
+	            for (int j = 0; j < matrix[i].length; j++) 
+	            {
+	                System.out.printf("%" + (maxColumnWidth + 3) + "d", matrix[i][j]);
+	            }
+	            System.out.println();
+	        }
+	    } 
+	    
+	    else 
+	    {
+	        System.out.println("Matrix not populated.");
+	    }
+	}
+
+	/*
+	 * DEBUGGER FOR DEV
+	 */
+	@SuppressWarnings("static-access")
+	private static void debugger() 
+	{
+		if (DEBUG) 
+		{
+			MCSTPrim t = new MCSTPrim();
+			MCSTKruskal t2 = new MCSTKruskal();
+			int V = 5; // vertices
+			int graph[][] = new int[][] 
+					// A  B  C  D  E
+			  { { 0, 2, 0, 6, 0 },      // A
+				{ 2, 0, 3, 8, 5 },      // B
+				{ 0, 3, 0, 0, 7 },      // C
+				{ 6, 8, 0, 0, 9 },      // D
+				{ 0, 5, 7, 9, 0 } };    // E
+
+				// PRIM
+				System.out.println("Using Prim's Algorithm...");
+				System.out.println("Following are the edges of the constructed MST:");
+				t.primMCST(graph);
+				System.out.println();
+
+				// KRUSKAL
+				int totalCost = 0;
+				List<MCSTKruskal.Edge> mstEdges = t2.kruskals(V, graph);
+
+				// Print the MST edges for Kruskal
+				System.out.println("Using Kruskal's Algorithm...");
+				System.out.println("Edge \tWeight");
+				for (MCSTKruskal.Edge edge : mstEdges) 
+				{
+					System.out.println(edge.src + " -- " + edge.dest + "\t" + edge.weight);
+					totalCost += edge.weight;
+				}
+				System.out.println("Total cost of MST: " + totalCost);
+		}
+	}
+
+	/*
+	 * Display header
+	 */
+	public static void printHeader()
+	{
+		System.out.println("Welcome to the Cost Adjacency Matrix Map Program.");
+		System.out.println("Author: Antonio Rosado");
+	} //end of method
+	// end user choices
+
+	/*
+	 * Display menu
+	 */
+	public static void printMenu()
+	{
+		System.out.println();
+		System.out.println("Select from the following menu:");
+		System.out.println("1. Populate the matrix.");
+		System.out.println("2. Print the matrix.");
+		System.out.println("3. Find the MCST via Prim's Algorithm.");
+		System.out.println("4. Find the MCST via Kruskal's Algorithm.");
+		System.out.println("5. Quit.");
+		System.out.println("6. DEV MODE.");
+	} //end of method
+}
+
